@@ -1,2 +1,0 @@
-# Wordpress
-# Progressive Web Application
