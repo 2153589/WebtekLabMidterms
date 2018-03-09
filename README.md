@@ -1,2 +1,1 @@
 # WebtekMidterms
-# Progressive Web App.
