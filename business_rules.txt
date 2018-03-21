@@ -1,0 +1,7 @@
+Tugudug is a progressive web app that helps managers of Wright Park's horse rental business to keep track of daily income.
+
+	The manager basically enters the time of rental and time of return. If the customer fails to return the horse on time, they will be charged with the additional
+minimum fee. The manager can 
+	The app will compute the income of a transaction by multiplying the total time of rental with the fixed price and adding other fees like when the customer has also
+rented a guide.
+	At the end of the day, the app will generate a report of the day's total income.
