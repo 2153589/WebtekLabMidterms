@@ -1,7 +1,19 @@
 Tugudug is a progressive web app that helps managers of Wright Park's horse rental business to keep track of daily income.
+	Features include:
+	-A summary of all horses in the park
+		-|| Horse No. || Horse Name || Status    || Times Riden || Last Return || 
+		 || 1	      || Spirit     || Available ||	8	|| 10:45am     ||
+		 
+	-The manager can enter the time of rental and time of return. 
+	
+	-The customer will have an allowance time of 15 minutes, exceeding by a minutes will incur an additional charge until the horse is 	    returned.
+	
+	-If the customer will require assistance from a guide the manager can use the app to assign the guide to the customer's horse.
+	
+	Makikita ng manager kung magkano ibabayad niya sa empleyado sa dami ng na assist   niyang customers based sa trails na pupuntahan.
+	
+	Every trails merong specific number of hours para ma reach, yung destination then macocompute agad yung total amount na babayran.
+		
+	The app will compute the income of a transaction by multiplying the total time of rental with the fixed price and adding other fees 		like when the customer has also.
 
-	The manager basically enters the time of rental and time of return. If the customer fails to return the horse on time, they will be charged with the additional
-minimum fee. The manager can 
-	The app will compute the income of a transaction by multiplying the total time of rental with the fixed price and adding other fees like when the customer has also
-rented a guide.
 	At the end of the day, the app will generate a report of the day's total income.
