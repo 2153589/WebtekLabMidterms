@@ -1,4 +1,4 @@
-Tugudug is a progressive web app that helps managers of Wright Park's horse rental business to keep track of daily income.
+Tugudug is a progressive web app that helps managers of Wright Park's horse rental business by keeping track of daily income.
 	Features include:
 	-A summary of all horses in the park
 		-|| Horse No. || Horse Name || Status    || Times Riden || Last Return || 
