@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Horse Timer1 - Stopwatch</title>
+	</head>
+	<body>
+		<div id='labels'>
+			<span id='hh'>Hours</span>
+			<span id='mm'>Minutes</span>
+		</div>
+
+		<div id='default'>00:00</div>
+		
+		<div id='controls'>
+			<button onclick='start()' id='start'>Start</button>
+		</div>
+
+		<script>
+			T{}
+			T.hTimer = document.getElementById('default');
+
+			//1. Display the time
+			function displayTimer(){
+				//Declare the variables (hour , minute)
+				var d = new Date();
+				var numHours = d.getHours();
+				var numMinute = d.getMinute();
+
+				timeNow = d.getHours().getMinute();
+
+				d.getElementById().innerHTML = numHours;
+
+			}
+		</script>
+	</body>
+</html>
