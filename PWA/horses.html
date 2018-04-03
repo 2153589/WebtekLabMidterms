@@ -3,7 +3,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="styles/styles1.css">
 	<link rel="icon" type="img/png" href="images/black.png">
-	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Tugudug </title>
 </head>
 <body>
 
@@ -19,113 +20,97 @@
 		</div>
 	</div>
 
-	<div class="navigationsContainer">
-		<div class="navigations">
-				<a href="index.html"> Home </a>
-				<a href="horses.html" class="active"> Horses</a>
-				<a href="#"> Active Rents</a>
-				<a href="#"> Employees</a>
-				<a href="#"> Daily Reports</a>
-			
-		</div>
-	</div>	
+	<div id="mySidenav" class="sidenav">
+  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  		<a href="#">About</a>
+  		<a href="#">Services</a>
+  		<a href="#">Clients</a>
+  		<a href="#">Contact</a>
+</div>
+	<div id = "main">
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-	<div class="contentContainer">
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 1
-			<br>
-			
-				Status:
-			</p>
-		</button>
+		<div class = "buttonContainer">
 
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 2
-			<br>
-			
-				Status:
-			</p>
+	<button id="myBtn" onclick=show()>Horse 1</button>
+	<button id="myBtn" onclick=show()>Horse 2</button>
+	<button id="myBtn" onclick=show()>Horse 3</button>
+	<button id="myBtn" onclick=show()>Horse 4</button>
+	<button id="myBtn" onclick=show()>Horse 5</button>
+	<button id="myBtn" onclick=show()>Horse 6</button>
+	<button id="myBtn" onclick=show()>Horse 7</button>
+	<button id="myBtn" onclick=show()>Horse 8</button>
+	<button id="myBtn" onclick=show()>Horse 9</button>
+	<button id="myBtn" onclick=show()>Horse 10</button>
 
-		<br><br>
-		
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 3
-			<br>
-				Status:
-			</p>
-		</button>
+		<!-- The Modal -->
+	<div id="myModal" class="modal">
 
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 4
-			<br>
-				Status:
-			</p>
-		</button>
+  			<!-- Modal content -->
+  		<div class="modal-content">
+    		<div class="modal-header">
+     			 <h2>Modal Header</h2>
+    		</div>
 
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 5
-			<br>
-				Status:
-			</p>
-		</button>
+    		<div class="modal-body">
+      			<p>Some text in the Modal Body</p>
+     		 	<p>Some other text...</p>
+    		</div>
 
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 6
-			<br>
-				Status:
-			</p>
-		</button>
-
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 7
-			<br>
-			
-				Status:
-			</p>
-		</button>
-
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 8
-			<br>
-			
-				Status:
-			</p>
-		</button>
-
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 3
-			<br>
-				Status:
-			</p>
-		</button>
-
-		<br><br>
-		<button onclick="myfunction()" class = "dropdown">
-			<p class="details">	
-				Horse 10
-			<br>
-			
-				Status:
-			</p>
-		</button>
+   			 <div class="modal-footer">
+       			<button class = "close">Ok</button>
+       		</div>		
+    </div>
+  </div>
 
 	</div>
+	</div>
+
+	
+
+	<script>
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	var close = document.getElementById("mySidenav");
+
+	// When the user clicks on the button, open the modal 
+	 function show() {
+    	modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+    	modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+    	if (event.target == modal) {
+        	modal.style.display = "none";
+    	}
+	}
+
+	function openNav() {
+    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("main").style.marginLeft = "250px";
+	}
+
+	/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+	function closeNav() {
+    	document.getElementById("mySidenav").style.width = "0";
+    	document.getElementById("main").style.marginLeft = "0";
+	}
+
+
+
+	</script>
 
 </body>
 </html>
