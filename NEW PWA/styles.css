@@ -1,0 +1,30 @@
+body{
+	background-image: url("horse4.jpg");
+	background-size: cover;
+	height: 100%;
+	
+}
+
+.button {
+	background-color: grey;
+	border-radius: 12px;
+	text-align: center;
+	display: inline-block;
+	font-size:16px;
+	color: white;
+	padding: 10px;
+}
+ .center {
+    line-height:0;
+    margin:auto;
+    text-align:center;
+    color:white;
+}
+.center h1 {
+	font-family: Diavlo Light;
+	color:white;
+	font-size: 60px;		
+}
+.centerContainer{
+	
+}
