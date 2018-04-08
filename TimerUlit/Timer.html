@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+
+    
+    <script>
+        function hour1(){
+            document.getElementById(timer).innerHTML = 60 + ":" + 00;
+            startTimer();
+        }
+
+        function startTimer(){
+            var presentTime = document.getElementById("timer").innerHTML;
+            var timeArray = presentTime.split(/[:]+/);
+            var m = (timeArray[0]);
+            var s = checkSecond((timeArray[1] - 1));
+            
+                if(s==59){m=m-1}
+                 //if(m<0){alert('timer completed')}
+  
+                     document.getElementById('timer').innerHTML =
+                         m + ":" + s;
+                        setTimeout(startTimer, 1000);
+        }
+        function checkSecond(sec) {
+            if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+                 if (sec < 0) {sec = "59"};
+                    return sec;
+}
+    </script>
+</head>
+<body>
+    <form action = "/action_page.php">
+        <select name = "hours">
+            <option value = "1hour" id = "timerHour" onchange="hour1()">1</option>
+            <option value = "2hour" id = "timerHour" onchange="hour2()">2</option>
+            <option value = "3hour" id = "timerHour" onchange="hour3()">3</option>
+            <option value = "4hour" id = "timerHour" onchange="hour4()">4</option>
+        </select>
+    </form>
+
+    <select id="minute">
+        <option value ="00" id = "timerMinute">00</option>
+        <option value = "30" id = "timerMinute">30</option>
+    </select>
+    <p id="debug"></p>
+
+    
+</body>
+</html>
