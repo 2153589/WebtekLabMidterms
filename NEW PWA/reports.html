@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tugudug</title>
+</head>
+<body>
+	<script>
+		var db = openDatabase('mydb', '1.0', 'my first database', 2 * 1024 * 1024);
+		db.transaction(function (tx) {
+  // here be the transaction
+tx.executeSql('CREATE TABLE Horse (id unique, text)');
+tx.executeSql('CREATE TABLE IF NOT EXISTS Horse (id unique, text)');
+  tx.executeSql('INSERT INTO Horse (id, text) VALUES (1, "Horsy")');
+  tx.executeSql('INSERT INTO foo (id, text) VALUES (?, ?)', [id, userValue]);
+ 
+});
+		tx.executeSql('SELECT * FROM foo', [], function (tx, results) {
+  var len = results.rows.length, i;
+  for (i = 0; i < len; i++) {
+    alert(results.rows.item(i).text);
+  }
+});
+
+	</script>
+</body>
+</html>
