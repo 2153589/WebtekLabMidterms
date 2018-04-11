@@ -2,8 +2,16 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style1.css">
+
 	<title> Tugudug </title>
+
+	<style type="text/css">
+		#limit_err{
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<div class = "headercontainer">
@@ -30,12 +38,20 @@
 		<br><br><br><br><br>
 
 	<div class = "contentContainer">
+		<input type="text" name="limit" id="limit"/>
+		<span id="limit_err"></span>
+		<button id="add_unit" class="okBtn" onclick="add()">ADD</button>
+		<br><br><br>
+
 		<div class = "Column1">
+
 			
-		<!--Horse1-->
+			
+		<!--Horse1
 			<button class = "btn" onclick="show()"> Horse 1</button>
 			<br><br><br><br>
-			
+		-->
+
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
 				<div class="modal-content">
@@ -95,10 +111,10 @@
 				</div>
 			</div>
 			
-		<!--Horse2-->
+		<!--Horse2
 			<button class = "btn" onclick="show()"> Horse 2</button>
 			<br><br><br><br>
-
+		-->
 
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
@@ -118,9 +134,9 @@
 				</div>
 			</div>
 
-		<!--Horse3-->
+		<!--Horse3
 			<button class = "btn" onclick="show()"> Horse 3</button>
-
+		-->
 				<div id="myModal" class="modal">
 					<!-- Modal Content -->
 					<div class="modal-content">
@@ -142,10 +158,10 @@
 
 		<!--Column2-->
 		<div class = "Column2">
-		<!--Horse4-->
+		<!--Horse4
 			<button class = "btn" onclick="show()"> Horse 4</button>
 			<br><br><br><br>
-
+		-->
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
 				<div class="modal-content">
@@ -165,10 +181,10 @@
 				</div>
 			</div>
 
-		<!--Horse5-->
+		<!--Horse5
 			<button class = "btn" onclick="show()"> Horse 5</button>
 			<br><br><br><br>
-			
+		-->	
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
 				<div class="modal-content">
@@ -188,8 +204,9 @@
 				</div>
 			</div>
 			
-		<!--Horse6-->
+		<!--Horse6
 			<button class = "btn" onclick="show()"> Horse 6</button>
+		-->	
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
 				<div class="modal-content">
@@ -211,10 +228,10 @@
 		</div>
 		<div class = "Column3">
 
-		<!--Horse7-->
+		<!--Horse7
 			<button class = "btn" onclick="show()"> Horse 7</button>
 			<br><br><br><br>
-
+		-->
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
 				<div class="modal-content">
@@ -234,10 +251,10 @@
 				</div>
 			</div>
 		
-		<!--Horse8-->
+		<!--Horse8
 			<button class = "btn" onclick="show()"> Horse 8</button>
 			<br><br><br><br>
-
+		-->
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
 				<div class="modal-content">
@@ -257,9 +274,9 @@
 				</div>
 			</div>
 			
-		<!--Horse9-->
+		<!--Horse9
 			<button class = "btn" onclick="show()"> Horse 9</button>
-
+		-->
 			<div id="myModal" class="modal">
 				<!-- Modal Content -->
 				<div class="modal-content">
@@ -281,8 +298,11 @@
 			
 		</div>	
 	</div>
-
+				
 				<script>
+
+				
+
 				// Get the modal
 				var modal = document.getElementById('myModal');
 
@@ -460,8 +480,56 @@ function alarmClear() {
   document.getElementById("ampm").disabled = false;
   sound.pause();
 }
+			//ADD NEW BOX
+				var count = 1;
 
-			</script>
+				function add(){
+					//event.preventDefault();
+					var lim = document.getElementById("limit").value;
+
+					if (count <= lim){
+						limit.style.border = "";
+						$('#limit_err').html("");
+
+						var hrs = document.getElementById("alarmhrs").value;
+
+						var new_box = "<button class='btn' onclick='show()''>Horse "+count+"</button><br><br>";
+
+							//GROUP THE BOXES INTO COLUMNS
+							if((count == 1) || (count == 2) || (count == 3) || (count==4)) {
+								$('.Column1').append(new_box);
+								count++;
+							}else if((count == 5) || (count == 6) || (count == 7) || (count == 8)) {
+								$('.Column2').append(new_box);
+								count++;
+							}else if((count == 9) || (count == 10) || (count == 11) || (count==12)) {
+								$('.Column3').append(new_box);
+								count++;
+							}else{
+								alert("no more columns.");
+							}
+
+						
+					}else if((count > lim) && (count != 1)){
+						limit.style.border = "";
+						$('#limit_err').html("");
+						alert("Limit");
+					}else{
+						limit.style.border = "1px solid red";
+						$('#limit_err').html("This field is required.");
+					}
+					
+
+				}
+
+
+				/*
+				setInterval(function() {
+					add();
+				}, 1000)	
+				*/
+
+		</script>
 	
 </body>
 </html>
