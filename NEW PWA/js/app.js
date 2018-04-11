@@ -1,13 +1,18 @@
-//Check if there is any service workers
-if('serviceWorker' in navigator){
+/**
+ * Registration of the service worker.
+ * This code checks if the service worker API is available.
+ */
 
-    navigator.serviceWorker
-    .register('./service-worker.js', { scope: "./" })
-    .then(function(registration) {
-        console.log("Service Worker Registered", registration);
-    })
-    .catch(function(err){
-        console.log("Service Worker Failed to Register", err)
-    })
+if ('serviceWorker' in navigator){
+    window.addEventListener('load' , function(){
+        navigator.serviceWorker.register('../service-worker.js')
+        .then(function(registration){
+            //Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+
+        }, function(err){
+            //registration failed :(
+            console.log('ServiceWorker registration failed: ',err);
+        });     
+    });
 }
-
