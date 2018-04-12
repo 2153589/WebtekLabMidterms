@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style1.css">
 
 	<title> Tugudug </title>
@@ -493,8 +493,12 @@ function alarmClear() {
 
 						var hrs = document.getElementById("alarmhrs").value;
 
-						var new_box = "<button class='btn' onclick='show()''>Horse "+count+"</button><br><br>";
-
+						var new_box = "<button class='btn' onclick='show()' id='box"+count+"'> Horse "+count+"</button><br><br>";
+						/*
+						$('.contentContainer').append(new_box);
+						count++;
+						*/
+						
 							//GROUP THE BOXES INTO COLUMNS
 							if((count == 1) || (count == 2) || (count == 3) || (count==4)) {
 								$('.Column1').append(new_box);
@@ -509,6 +513,15 @@ function alarmClear() {
 								alert("no more columns.");
 							}
 
+						var count_n = count -1;	
+						var new_time = 	"<input type='text' value='endtime "+count_n+"'/>";
+						//$('#buttonHolder').append(new_time);
+
+						//$('#box2').append(new_time);
+
+						var w_box = '#box'+count_n;
+						//alert(w_box);
+						$(w_box).append(new_time);
 						
 					}else if((count > lim) && (count != 1)){
 						limit.style.border = "";
@@ -521,6 +534,8 @@ function alarmClear() {
 					
 
 				}
+
+				
 
 
 				/*
