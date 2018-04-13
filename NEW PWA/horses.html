@@ -26,8 +26,8 @@
 			<br>
 
 			<div class = "navigations" id = "mynav">
+				<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 				<a href = "report.html">Report</a>
-				<a href = "employees.html">Employees</a>
 				<a href = "horses.html" class ="active">Horses</a>
 				<a href = "index.html">Home</a>
 				
@@ -110,192 +110,14 @@
 						
 				</div>
 			</div>
-			
-		<!--Horse2
-			<button class = "btn" onclick="show()"> Horse 2</button>
-			<br><br><br><br>
-		-->
-
-			<div id="myModal" class="modal">
-				<!-- Modal Content -->
-				<div class="modal-content">
-					<div class="modal-content">
-						<div class = "modal-header">
-							<h2> Horse 2 </h2>
-						</div>
-						<div class = "content">
-							<p> Lagyan mo ng content.</p>
-						</div>
-						<div class = "modal-footer">
-							<button class = "okBtn" onclick="ok()">Ok</button>
-						</div>
-						
-				</div>
-				</div>
-			</div>
-
-		<!--Horse3
-			<button class = "btn" onclick="show()"> Horse 3</button>
-		-->
-				<div id="myModal" class="modal">
-					<!-- Modal Content -->
-					<div class="modal-content">
-					<div class = "modal-header">
-						<h2> Horse 1 </h2>
-					</div>
-					<div class = "content">
-						<p> Lagyan mo ng content.</p>
-					</div>
-					<div class = "modal-footer">
-						<button class = "okBtn" onclick="ok()">Ok</button>
-
-					</div>
-						
-				</div>						
-				</div>	
+		
 			</div>	
 		
 
 		<!--Column2-->
 		<div class = "Column2">
-		<!--Horse4
-			<button class = "btn" onclick="show()"> Horse 4</button>
-			<br><br><br><br>
-		-->
-			<div id="myModal" class="modal">
-				<!-- Modal Content -->
-				<div class="modal-content">
-									<div class="modal-content">
-					<div class = "modal-header">
-						<h2> Horse 1 </h2>
-					</div>
-					<div class = "content">
-						<p> Lagyan mo ng content.</p>
-					</div>
-					<div class = "modal-footer">
-						<button class = "okBtn" onclick="ok()">Ok</button>
-
-					</div>
-						
-				</div>
-				</div>
-			</div>
-
-		<!--Horse5
-			<button class = "btn" onclick="show()"> Horse 5</button>
-			<br><br><br><br>
-		-->	
-			<div id="myModal" class="modal">
-				<!-- Modal Content -->
-				<div class="modal-content">
-				<div class="modal-content">
-					<div class = "modal-header">
-						<h2> Horse 1 </h2>
-					</div>
-					<div class = "content">
-						<p> Lagyan mo ng content.</p>
-					</div>
-					<div class = "modal-footer">
-						<button class = "okBtn" onclick="ok()">Ok</button>
-
-					</div>
-						
-				</div>
-				</div>
-			</div>
-			
-		<!--Horse6
-			<button class = "btn" onclick="show()"> Horse 6</button>
-		-->	
-			<div id="myModal" class="modal">
-				<!-- Modal Content -->
-				<div class="modal-content">
-				<div class="modal-content">
-					<div class = "modal-header">
-						<h2> Horse 1 </h2>
-					</div>
-					<div class = "content">
-						<p> Lagyan mo ng content.</p>
-					</div>
-					<div class = "modal-footer">
-						<button class = "okBtn" onclick="ok()">Ok</button>
-
-					</div>
-						
-				</div>
-				</div>
-			</div>
 		</div>
 		<div class = "Column3">
-
-		<!--Horse7
-			<button class = "btn" onclick="show()"> Horse 7</button>
-			<br><br><br><br>
-		-->
-			<div id="myModal" class="modal">
-				<!-- Modal Content -->
-				<div class="modal-content">
-									<div class="modal-content">
-					<div class = "modal-header">
-						<h2> Horse 1 </h2>
-					</div>
-					<div class = "content">
-						<p> Lagyan mo ng content.</p>
-					</div>
-					<div class = "modal-footer">
-						<button class = "okBtn" onclick="ok()">Ok</button>
-
-					</div>
-						
-				</div>
-				</div>
-			</div>
-		
-		<!--Horse8
-			<button class = "btn" onclick="show()"> Horse 8</button>
-			<br><br><br><br>
-		-->
-			<div id="myModal" class="modal">
-				<!-- Modal Content -->
-				<div class="modal-content">
-				<div class="modal-content">
-					<div class = "modal-header">
-						<h2> Horse 1 </h2>
-					</div>
-					<div class = "content">
-						<p> Lagyan mo ng content.</p>
-					</div>
-					<div class = "modal-footer">
-						<button class = "okBtn" onclick="ok()">Ok</button>
-
-					</div>
-						
-				</div>
-				</div>
-			</div>
-			
-		<!--Horse9
-			<button class = "btn" onclick="show()"> Horse 9</button>
-		-->
-			<div id="myModal" class="modal">
-				<!-- Modal Content -->
-				<div class="modal-content">
-				<div class="modal-content">
-					<div class = "modal-header">
-						<h2> Horse 1 </h2>
-					</div>
-					<div class = "content">
-						<p> Lagyan mo ng content.</p>
-					</div>
-					<div class = "modal-footer">
-						<button class = "okBtn" onclick="ok()">Ok</button>
-
-					</div>
-						
-				</div>
-				</div>
-			</div>
-			
 		</div>	
 	</div>
 				
@@ -534,6 +356,14 @@ function alarmClear() {
 					
 
 				}
+				function myFunction() {
+    var x = document.getElementById("mynav");
+    if (x.className === "navigations") {
+        x.className += " responsive";
+    } else {
+        x.className = "navigations";
+    }
+}
 
 				
 

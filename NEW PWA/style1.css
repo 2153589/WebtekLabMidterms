@@ -7,6 +7,7 @@ body{
 	background-image: url("horse2.jpg");
 	background-size: cover;
 	height: 100%;
+    width: 100%;
     margin: auto;
 }
 
@@ -69,7 +70,27 @@ body{
         width: 100%;
     }
 }
+@media screen and (max-width: 600px) {
+  .nqvigations.responsive {position: relative;}
+  .navigations.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navigations.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
 
+.navigations .icon {
+  display: none;
+}
+
+.navigations {
+  overflow: hidden;
+}
 .contentContainer{
 	width: 1020px;
 	height: 400px;
