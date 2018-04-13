@@ -6,6 +6,7 @@
 body{
 	background-image: url("horse2.jpg");
 	background-size: cover;
+    background-repeat: no-repeat;
 	height: 100%;
     width: 100%;
     margin: auto;
