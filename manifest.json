@@ -1,0 +1,18 @@
+{
+"name": "Tugudug",
+"short_name": "Tugudug",
+"description": "Horse Timer",
+"lang": "en-US",
+"starl_url": "/",
+"display": "any",
+"orientation": "any",
+"background_color": "#D2B48C",
+"theme_color": "#D2B48C",
+"icons": [
+{
+"src": "images/icon.png",
+"sizes": "1300x1300",
+"type":"images/png"
+}
+]
+}
