@@ -1,0 +1,6 @@
+<system.webServer>
+  <staticContent>
+  <remove fileExtension = ".json"/>
+  <mimeMap fileExtension = ".json" mimeType = "application/manifest+json"/>
+  </staticContent>
+  </system.webServer>
