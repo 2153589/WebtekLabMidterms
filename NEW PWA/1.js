@@ -1,27 +1,6 @@
-//MOTHER FUDGING SERVICE WORKING SERVICE WORKER!!!! FINALLY FINAL!!!!!!!
-
-/**
- * Registration of the service worker.
- * This code checks if the service worker API is available.
- */
-
-if ('serviceWorker' in navigator){
-    window.addEventListener('load' , function(){
-        navigator.serviceWorker.register('/service-worker.js')
-        .then(function(registration){
-            //Registration was successful
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-
-        }, function(err){
-            //registration failed :(
-            console.log('ServiceWorker registration failed: ',err);
-        });     
-    });
-}
-
 /**
  * Updating the Service Worker
- *
+ */
  // Function to perform HTTP request
  var get = function(url) {
     return new Promise(function(resolve, reject) {
@@ -44,16 +23,20 @@ if ('serviceWorker' in navigator){
   
     }); 
   };
-**/  
+  
 
 //Array used to hold the resources to be cached
-const CACHE_NAME = 'my-site-cache-v2';
-const urlsToCache = [
+var CACHE_NAME = 'my-site-cache-v1';
+var RUNTIME = 'runtime';
+var urlsToCache = [
     './',
-    //'/style1.css',
-    //'/styles.css',
-    '/index.html',
-    'js/app.js'
+    '/styles/styles.css',
+    '/styles/style1.css',
+    '/styles/images/horse2.jpg',
+    '/styles/images/horse1.jpg',
+    '/styles/images/black.png',
+    'index.html',
+    '/script/main.js'
 ];
 
 /**
@@ -74,38 +57,33 @@ self.addEventListener('install', function(event){
         //PROMISE are functions
         caches.open(CACHE_NAME)
         .then(function(cache){
-            return cache.addAll(urlsToCache);
             console.log('Opened cache');
-        }).then(function(){
-            return self.skipWaiting();
+            return cache.addAll(urlsToCache);
         })
-            /*.then(cache => cache.addAll(CACHE_NAME))
-            .then(self.skipWaiting())*/
     );
 });
 
-self.addEventListener('activate', function(event){
+/**
+ * Activate function of the serviceworker this function is responsible for cleaning old caches.
+ * 
+ */
+self.addEventListener('activate', event => {
     const currentCaches = [CACHE_NAME, RUNTIME];
     event.waitUntil(
         caches.keys().then(cacheNames => {
-            return cacheNames.filter(cacheName => !currentCaches.includes(cacheName))
+            return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
+
         }).then(cachesToDelete => {
             return Promise.all(cachesToDelete.map(cacheToDelete => {
                 return caches.delete(cacheToDelete);
+
             }));
         }).then(() => self.clients.claim())
     );
+
 });
-        /**caches.keys().then(keyList => {
-            return Promise.all(keyList.map(key => {
-                if (key !== CACHE_NAME){
-                    return caches.deletes(key);
-                }
-            }));
-        }));
-        return self.clients.claim();
-});
-**/
+
+
 
 /**
  * FETCH this step lets the service worker return cached responses
@@ -130,7 +108,7 @@ self.addEventListener ('fetch' , function(event){
 
         /**
          * If a user wants to cache new multiple requests, we then need to handle the response by storing the fetch requests to the cache
-         *  IMPORTANT:
+         * IMPORTANT:
          * Clone the request because it is a stream that can only be used once.
          * Hence storing the request in a variable.
          */
@@ -162,18 +140,3 @@ self.addEventListener ('fetch' , function(event){
 });
 
 
-//On activate: Removes outdated caches
-/**
- * If any of the caches fail to fetch this function will delete any caches that does not match the cache name
- */
-self.addEventListener('activate', function(event){
-    event.waitUntil(
-        caches.keys().then(keyList => {
-            return Promise.all(keyList.map(key => {
-                if (key !== CACHE_NAME){
-                    return caches.deletes(key);
-                }
-            }));
-        }));
-        return self.clients.claim();
-});
