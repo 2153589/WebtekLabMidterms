@@ -1,0 +1,215 @@
+<html>
+
+<head>
+
+<title>
+TUGUDUG
+</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+<link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="header">
+		<div class="topnav" id="topnav">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+						<a href="index.html"><img src="./img/logo.png"></a>
+					</div>
+
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 topnavTitle">
+						<b>TUGUDUG</b>
+					</div>
+
+
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 topnavSocialmedia" id="topnavSocialmedia">
+						<a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+						<a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+						<a href="#"><i class="fa fa-tumblr fa-lg"></i></a>
+						<a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+						<a href="#"><i class="fa fa-yelp fa-lg"></i></a>
+					</div>
+
+					<div id="hide">
+						<div class="hide col-xs-6">
+							<a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+							<a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+							<a href="#"><i class="fa fa-tumblr fa-lg"></i></a>
+							<a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+							<a href="#"><i class="fa fa-yelp fa-lg"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<script>
+			/*open sidenav/push topnav/hide button*/
+			function openNav() {
+    			document.getElementById("mySidenav").style.width = "180px";
+    			document.getElementById("topnav").style.left = "180px";
+    			document.getElementById("left").style.left = "180px";
+    			document.getElementById("topnavSocialmedia").style.right = "-70";
+    			document.getElementById("openNav").style.display = "none";
+			}
+
+			/* hide sidenav */
+			function closeNav() {
+			    document.getElementById("mySidenav").style.width = "0";
+    			document.getElementById("topnav").style.left= "0";
+    			document.getElementById("left").style.left = "0";
+    			document.getElementById("topnavSocialmedia").style.left = "0";
+    			document.getElementById("openNav").style.display = "block";
+			}
+		</script>
+
+		<div id="mycarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#mycarousel" data-slide-to="1"></li>
+				<li data-target="#mycarousel" data-slide-to="2"></li>
+				<li data-target="#mycarousel" data-slide-to="3"></li>
+				<li data-target="#mycarousel" data-slide-to="4"></li>
+			</ol>
+
+			<div class="buttons">
+				<center>
+					<a href="horses.html">
+						<div>
+							<button class="testbutton">
+								<b>H     O     R     S     E     S</b>
+							</button>
+						</div>
+					</a>	
+				</center>
+			</div>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item">
+					<div class="carouselitem">		
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carouselitem2">
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carouselitem3">
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carouselitem4">
+					</div>
+				</div>
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" id="left" href="#mycarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+
+			<a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+		<script>
+			var $item = $('.carousel .item'); 
+			var $wHeight = $(window).height();
+			$item.eq(0).addClass('active');
+			$item.height($wHeight); 
+			$item.addClass('full-screen');
+
+			$('.carousel img').each(function() {
+				var $src = $(this).attr('src');
+				var $color = $(this).attr('data-color');
+				$(this).parent().css({
+					'background-image' : 'url(' + $src + ')',
+					'background-color' : $color
+				});
+				$(this).remove();
+			});
+
+			$(window).on('resize', function (){
+				$wHeight = $(window).height();
+				$item.height($wHeight);
+			});
+
+			$('.carousel').carousel({
+				interval: 6000,
+				pause: "false"
+			});
+		</script>
+
+	</div>
+
+		<div style="overflow:hidden;height:500px;max-width:100%;"><div id="canvas-for-google-map" style="height:100%; width:100%;max-width:100%;">
+			<iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.175492553241!2d120.61451501477279!3d16.415911234414246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a6aab90f501d%3A0xd60c1ab088f168b0!2sWright+Park!5e0!3m2!1sen!2sph!4v1524991765814" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div><a class="embed-map-code" rel="nofollow" href="https://www.embed-map.com" id="inject-map-data">https://www.embed-map.com</a><style>#canvas-for-google-map img{max-width:none!important;background:none!important;font-size: inherit;}</style>
+	</div>
+
+		
+
+	
+	<div class="footer col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<center>
+		<div class="row">
+
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 footerDetails">
+				AIKA VIEN DAYRIT
+			</div>
+
+			<div class="col-lg-4 col-md-4 footerDetails">
+				© 2016 Bar Resto. All Rights Reserved.
+			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 footerSocialmedia" id="hide2">
+				<a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+				<a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+				<a href="#"><i class="fa fa-tumblr fa-lg"></i></a>
+				<a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+				<a href="#"><i class="fa fa-yelp fa-lg"></i></a>
+			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 footerSocialmedia">
+				<a href="#"><i class="fa fa-cc-mastercard fa-lg"></i></a>
+				<a href="#"><i class="fa fa-cc-visa fa-lg"></i></a>
+				<a href="#"><i class="fa fa-cc-discover fa-lg"></i></a>
+			</div>
+
+		</div>
+		
+		<div id="testshow">
+
+			<div class="col-sm-12 col-xs-12 footerDetailsshow">
+				© 2016 Bar Resto. All Rights Reserved.
+			</div>
+
+		</div>
+
+		</center>
+	</div>
+</body>
+
+</html>
