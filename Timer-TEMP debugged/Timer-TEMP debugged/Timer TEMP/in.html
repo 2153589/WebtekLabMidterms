@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+	<!-- Multi Column -->
+
+<div class="row clearfix">
+
+    <div class="col-lg-12">
+
+        <div class="modal-body">
+
+        			
+        				<form>
+        				<h2>Number of Horse to rent</h2> : <input type="number" name="" id="horseNumber" required>
+        				<br>
+        				<h2>Set Time Out :</h2>
+        				Hours: <input type="number" id="inH"  min="0" max="4" required="">
+           				 Minutes: <input type="number" id="inM" min="0" max="60" required="">
+        				<br>
+        				<br>
+        				<br>
+        				<input type="button" onclick="addHorse();" value="Add">
+        				</form>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr>
+                    <div>
+                        <table  id="dynamic_field">
+                            <thead>
+                            <th >Horse Number</th>
+                            <th >Time In</th>
+                            <th >Time Out</th>
+                            <th >Rent Duration</th>
+                            <th >Price</th>
+                            <th ></th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+
+                    <br>
+                    <hr>
+                    
+
+            </div>
+
+        </div>
+        </form>
+
+
+    </div>
+
+</div>
+<!-- #END# Multi Column -->
+<script>
+	let temp = 1;
+	function addHorse(){
+		let da = new Date();
+		let hours = da.getHours() % 12 || 12;
+		let minute = da.getMinutes();
+		let time = hours + ' : ' + minute;
+		var t = document.getElementById('horseNumber').value - 1;
+
+		//Time Out ditoy
+		var hourIn = parseInt(document.getElementById('inH').value);
+		var minuteIn = parseInt(document.getElementById('inM').value);
+
+		//Price
+		let pr = hourIn*60 + minuteIn;
+		let tprice = 0;
+		let pri = Math.floor(pr /60);
+		tprice += pri * 400;
+		let ttt = pr % 60;
+		if(ttt > 45 ){
+			tprice += 400;
+		}else if(ttt > 0 && ttt < 45){
+			tprice += 200;
+		}else{
+			tprice += 0;
+		}
+
+
+		//Duration
+		var duration = hourIn + 'hrs' + ' : ' + minuteIn + 'mins';
+
+
+		var thour = hours + hourIn;
+		var tminute = minute + minuteIn;
+		let timeOut = thour +  ' : ' + tminute ;
+
+		for (var i = 0; i <= t; i++) {
+			$('#dynamic_field').append('' +
+	                '<tr id="row' + i + '">' +
+	                '<td><input type="number"   name="qIssued[]" id="iss" min="0" placeholder = "Horse ' + temp + '" disabled></td>' +
+	                '<td><input type="number" name="qRequested[]" id="req" min="0" placeholder = "' + time + '" disabled></td>' +
+
+	                '<td><input type="number"   name="qIssued[]" id="iss" min="0" placeholder = " ' + timeOut +'" disabled></td>' +
+
+	                '<td><input type="number"   name="qIssued[]" id="iss" min="0" placeholder = " ' + duration + '" disabled></td>' +
+
+	                '<td><input type="number"   name="qIssued[]" id="iss" min="0" placeholder = " ' + tprice +'" disabled></td>' +
+
+	                '<td class = "text-center"><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove ">X</button>' +
+	                '</tr>');
+			temp++;
+
+		}
+	}
+	
+
+    $(document).ready(function () {
+
+        var i = 1;
+        $('#add').click(function () {
+            i++;
+            $('#dynamic_field').append('' +
+                '<tr id="row' + i + '">' +
+                '<td><input type="number"   name="qIssued[]" id="iss" min="0" disabled></td>' +
+                '<td><input type="number" name="qRequested[]" id="req" min="0" disabled></td>' +
+
+                '<td><input type="number"   name="qIssued[]" id="iss" min="0" disabled></td>' +
+
+                '<td><input type="number"   name="qIssued[]" id="iss" min="0" disabled></td>' +
+
+                '<td><input type="number"   name="qIssued[]" id="iss" min="0" disabled></td>' +
+
+                '<td class = "text-center"><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove ">X</button>' +
+                '</tr>');
+        });
+
+
+    });
+    $(document).on('click', '.btn_remove', function () {
+        var button_id = $(this).attr("id");
+        $('#row' + button_id + '').remove();
+    });
+
+</script>
+
+
+</body>
+</html>
